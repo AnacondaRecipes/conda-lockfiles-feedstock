@@ -1,6 +1,6 @@
 {% set name = "conda-lockfiles" %}
-{% set version = "0.1.1" %}
-{% set sha256 = "95a7d2adf1b1a1b98ede9865bc6c7130a79089de751ceb15ff86af4ec182a888" %}
+{% set version = "0.2.0" %}
+{% set sha256 = "d3a27fdd81caa24fcd69c4257be0443fc9f0f5c7965a84eaf714a6de5f11d69a" %}
 
 package:
   name: {{ name }}
@@ -24,6 +24,7 @@ requirements:
   run:
     - python >={{ python_min }}
     - conda >=25.9.0
+    - pydantic >=2,<3
     - ruamel.yaml
 
 test:
