@@ -12,30 +12,32 @@ source:
 
 build:
   number: 0
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --vv
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python
     - pip
     - hatchling >=1.12.2
     - hatch-vcs >=0.2.0
   run:
-    - python >={{ python_min }}
+    - python
     - conda >=25.9.0
     - pydantic >=2,<3
     - ruamel.yaml
 
 test:
   requires:
-    - python {{ python_min }}
+    - python
+    - pip
   imports:
     - conda_lockfiles
     - conda_lockfiles.conda_lock.v1
     - conda_lockfiles.exceptions
     - conda_lockfiles.plugin
     - conda_lockfiles.rattler_lock.v6
+  commands:
+    - pip check
 
 about:
   home: https://github.com/conda-incubator/conda-lockfiles
