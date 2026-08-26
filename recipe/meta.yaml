@@ -1,14 +1,13 @@
 {% set name = "conda-lockfiles" %}
 {% set version = "0.2.1" %}
-{% set sha256 = "91e087f58395c50c3c5c963e563376c306c28781948116add60cdb028dc2273f" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://github.com/conda/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 3e7ae4644b2bbc93738fcdfebd28cdc520d591cba5e8d574846a0be9be8d377a
 
 build:
   number: 1
