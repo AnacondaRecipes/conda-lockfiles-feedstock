@@ -1,5 +1,5 @@
 {% set name = "conda-lockfiles" %}
-{% set version = "0.2.1" %}
+{% set version = "0.2.2" %}
 
 package:
   name: {{ name }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 3e7ae4644b2bbc93738fcdfebd28cdc520d591cba5e8d574846a0be9be8d377a
+  sha256: 3f1d24b655fc62e557ea2b52aecb71f4643e4185ab0d962028dfc6dec625edf0
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
 requirements:
